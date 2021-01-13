@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d1a40a16-5c3a-4f13-b910-7a430fd61bdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/Product/ProductCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Product/ProductCollection.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,7 +175,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609713716576</updated>
       <workItem from="1609713718845" duration="8526000" />
-      <workItem from="1610461963034" duration="2223000" />
+      <workItem from="1610461963034" duration="4295000" />
     </task>
     <servers />
   </component>
@@ -193,5 +193,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610466265486">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1610466265486" />
   </component>
 </project>
