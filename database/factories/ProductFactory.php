@@ -3,6 +3,7 @@
 namespace Database\Factories\Model;
 
 use App\Models\Model\Product;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProductFactory extends Factory
@@ -26,7 +27,9 @@ class ProductFactory extends Factory
             'detail'=>$this->faker->paragraph,
             'price'=>$this->faker->numberBetween(10,1000),
             'stock'=>$this->faker->randomDigit,
-            'discount'=>$this->faker->numberBetween(5,30)
+            'discount'=>$this->faker->numberBetween(5,30),
+            'user_id' => User::factory()
+
 
 
         ];
