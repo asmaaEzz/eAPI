@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReviewRequest;
 use App\Http\Resources\ReviewResource;
 use App\Models\Product;
 use App\Models\Review;
+use http\Env\Response;
 use Illuminate\Http\Request;
+use mysql_xdevapi\Result;
+use function GuzzleHttp\Promise\all;
 
 class ReviewController extends Controller
 {
@@ -32,18 +36,23 @@ class ReviewController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param ReviewRequest $request
+     * @param Product $product
+     * @return Product|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ReviewRequest $request,Product $product)
     {
-        //
+        $review = new Review($request->all());
+        $product->reviews()->save($review);
+        return \response([
+            "data"=>new ReviewResource($review)
+        ],\Symfony\Component\HttpFoundation\Response::HTTP_CREATED);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Model\Review  $review
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
     public function show(Review $review)
@@ -54,7 +63,7 @@ class ReviewController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Model\Review  $review
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
     public function edit(Review $review)
@@ -66,7 +75,7 @@ class ReviewController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Model\Review  $review
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Review $review)
@@ -77,7 +86,7 @@ class ReviewController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Model\Review  $review
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
     public function destroy(Review $review)
