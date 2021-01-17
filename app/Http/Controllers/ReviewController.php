@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\ReviewResource;
-use App\Models\Model\Product;
-use App\Models\Model\Review;
+use App\Models\Product;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller

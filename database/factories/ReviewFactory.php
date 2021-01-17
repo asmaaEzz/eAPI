@@ -1,9 +1,9 @@
 <?php
 
-namespace Database\Factories\Model;
+namespace Database\Factories;
 
-use App\Models\Model\Product;
-use App\Models\Model\Review;
+use App\Models\Product;
+use App\Models\Review;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ReviewFactory extends Factory

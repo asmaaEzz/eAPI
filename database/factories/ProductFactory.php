@@ -1,13 +1,16 @@
 <?php
 
-namespace Database\Factories\Model;
+namespace Database\Factories;
 
-use App\Models\Model\Product;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 
 class ProductFactory extends Factory
 {
+
     /**
      * The name of the factory's corresponding model.
      *
@@ -28,7 +31,9 @@ class ProductFactory extends Factory
             'price'=>$this->faker->numberBetween(10,1000),
             'stock'=>$this->faker->randomDigit,
             'discount'=>$this->faker->numberBetween(5,30),
-            'user_id' => User::factory()
+            'user_id' => function(){
+            return User::all()->random();
+            }
 
 
 
